@@ -1,4 +1,4 @@
-desc "Install dot-files into home directory."
+desc "Install dotfiles into home directory."
 task :install do
   replace_all = false
   Dir['*'].each do |file|

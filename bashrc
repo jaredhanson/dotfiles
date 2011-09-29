@@ -22,3 +22,13 @@ rvm default
 # To set the default version of Node:
 # $ nvm alias default v0.4.0
 nvm use default
+
+
+# -------------------------------------------------------------------
+# LOCAL CONFIGURATION
+# -------------------------------------------------------------------
+
+# Load .bashrc.local for system-specific settings
+if [ -f ~/.bashrc.local ]; then
+  source ~/.bashrc.local
+fi
