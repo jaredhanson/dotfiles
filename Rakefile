@@ -2,7 +2,7 @@ desc "Install dotfiles into home directory."
 task :install do
   replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile].include? file
+    next if %w[Rakefile README.md].include? file
     
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file}")
