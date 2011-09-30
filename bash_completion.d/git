@@ -2736,3 +2736,10 @@ else
 		shopt "$@"
 	}
 fi
+
+# CREDIT
+# Repository: git://github.com/git/git.git
+# Tag: v1.7.6.1
+# Path: /contrib/completion/git-completion.bash
+# Copied-By: Jared Hanson <jaredhanson@gmail.com>
+# Copied-At: 2011-09-30T12:58:04-07:00
