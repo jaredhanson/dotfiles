@@ -8,8 +8,9 @@
 # Use default version of Ruby.
 # To set the default version of Ruby:
 # $ rvm --default use 1.9.2
-rvm default
-
+if command -v rvm &>/dev/null ; then
+  rvm default
+fi
 
 # -------------------------------------------------------------------
 # NODE ENVIRONMENT
@@ -21,7 +22,9 @@ rvm default
 # Use default version of Node.
 # To set the default version of Node:
 # $ nvm alias default v0.4.0
-nvm use default
+if command -v nvm &>/dev/null ; then
+  nvm use default
+fi
 
 
 # -------------------------------------------------------------------
