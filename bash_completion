@@ -1,1 +1,2 @@
 source ~/.bash_completion.d/brew
+source ~/.bash_completion.d/git
