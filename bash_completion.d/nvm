@@ -1,0 +1,3 @@
+if [ -f ~/.nvm/bash_completion ]; then
+  source ~/.nvm/bash_completion
+fi
