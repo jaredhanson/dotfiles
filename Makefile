@@ -12,3 +12,7 @@ bash:
 .PHONY: posix
 posix:
 	stow $(STOWFLAGS) --dotfiles posix
+
+.PHONY: node
+node:
+	stow $(STOWFLAGS) --dotfiles node
