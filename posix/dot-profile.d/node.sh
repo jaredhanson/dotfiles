@@ -1,5 +1,5 @@
 # Load NVM (Node Version Manager) into shell.
-[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+[ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh"
 
 # Use default version of Node.
 # To set the default version of Node:
