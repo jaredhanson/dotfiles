@@ -8,3 +8,7 @@ stow:
 .PHONY: bash
 bash:
 	stow $(STOWFLAGS) --dotfiles bash
+
+.PHONY: posix
+posix:
+	stow $(STOWFLAGS) --dotfiles posix
