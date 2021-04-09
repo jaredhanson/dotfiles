@@ -1,4 +1,4 @@
-# dotfiles > node
+# dotfiles / node
 
 This directory contains utilities for installing and configuring [Node.js](https://nodejs.org/).
 
