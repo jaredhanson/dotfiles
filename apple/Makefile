@@ -1,3 +1,6 @@
 # NOTE: Needs to be invoked with sudo make install
-install:
+cocoapods:
 	gem install cocoapods
+
+carthage:
+	brew install carthage
