@@ -1,0 +1,2 @@
+install:
+	brew install gnupg
