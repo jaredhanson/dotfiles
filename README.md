@@ -30,3 +30,16 @@ $ make install
 $ cd ~/.dotfiles/stow
 $ make install
 ```
+
+
+# New Instructions
+
+Install homebrew
+
+$ eval "$(/opt/homebrew/bin/brew shellenv)"
+
+Install dependencies, including stow
+
+$ brew bundle
+
+stow zsh
