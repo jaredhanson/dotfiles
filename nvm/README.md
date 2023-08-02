@@ -1,9 +1,7 @@
 # ~ / .dotfiles / nvm
 
 [nvm](https://github.com/nvm-sh/nvm) allows installing and switching between
-multiple versions of [Node.js](https://nodejs.org/en).
-
-This directory contains configuration files for [Zsh](https://www.zsh.org/).
+multiple versions of [Node.js](https://nodejs.org/).
 
 ## Install
 
@@ -19,8 +17,26 @@ To install a version of Node.js, execute:
 $ nvm install 20.5.0
 ```
 
+To use a version of Node.js, execute:
+
+```sh
+$ nvm use 18.17.0
+```
+
+To display the currently active version of Node.js, execute:
+
+```
+$ nvm current
+```
+
+To list installed versions of Node.js, execute:
+
+```sh
+$ nvm ls
+```
+
 To set the default version of Node.js, execute:
 
 ```sh
-$ nvm alias default 18.17.0
+$ nvm alias default 20.5.0
 ```
