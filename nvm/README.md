@@ -17,7 +17,9 @@ To install a version of Node.js, execute:
 $ nvm install 20.5.0
 ```
 
-To use a version of Node.js, execute:
+This command will download and install Node.js to `$HOME/.nvm/versions/node/v{version}`.
+
+To use a specific version of Node.js, execute:
 
 ```sh
 $ nvm use 18.17.0
