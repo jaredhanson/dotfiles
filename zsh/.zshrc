@@ -13,5 +13,6 @@
 # [1]: https://github.com/pyenv/pyenv
 
 if command -v pyenv >/dev/null ; then
-  eval "$(pyenv init -)"
+	export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
 fi
