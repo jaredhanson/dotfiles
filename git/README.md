@@ -1,3 +1,9 @@
-# .dotfiles / git
+# ~ / .dotfiles / git
 
-This directory contains configuration files for [Git](https://git-scm.com/).
+[Git](https://git-scm.com/) is a distributed version control system.
+
+## Configure
+
+```sh
+stow git
+```
