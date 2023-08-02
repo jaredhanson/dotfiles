@@ -1,5 +1,7 @@
 # rust
 
+https://www.rust-lang.org/tools/install
+
 $ make install
 
 Welcome to Rust!
