@@ -42,16 +42,6 @@ fi
 # Node.js Developer Environment
 # =============================================================================
 
-# [nvm][1] allows switching between multiple versions of Node.js.
-#
-# To install a version of Node.js, execute:
-#   $ nvm install 20.5.0
-#
-# To set the default version of Node.js, execute:
-#   $ nvm alias default 18.17.0
-#
-# [1]: https://github.com/nvm-sh/nvm
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
