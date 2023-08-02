@@ -4,6 +4,15 @@
 
 # [asdf][1] allows switching between multiple versions of tools.
 #
+# To install a plugin for managing a tool, execute:
+#   $ asdf plugin add deno
+#
+# To install a version of a tool, execute:
+#   $ asdf install deno 1.35.3
+#
+# To set the default version of a tool, execute:
+#   $ asdf global deno 1.29.4
+#
 # [1]: https://asdf-vm.com/
 
 . "$HOME/.asdf/asdf.sh"
