@@ -1,6 +1,6 @@
 # ~ / .dotfiles / asdf
 
-[asdf](https://asdf-vm.com/) allows installing and switching between
+[`asdf`](https://asdf-vm.com/) allows installing and switching between
 multiple versions of various tools.
 
 ## Install
