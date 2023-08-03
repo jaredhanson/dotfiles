@@ -1,0 +1,45 @@
+# ~ / .dotfiles / ssh
+
+[SSH](https://www.openssh.com/) is...
+
+## Usage
+
+To generate a key, execute:
+
+```sh
+$ ssh-keygen -t ed25519 -C "jaredhanson@macbook-pro.local"
+```
+
+To add a key (also known as an identity) to `ssh-agent`, execute:
+
+```sh
+ssh-add ~/.ssh/id_ed25519
+```
+
+To add a key to `ssh-agent` and store the passphrase in the user's keychain on
+macOS, execute the command with the `--apple-use-keychain` option:
+
+```sh
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
+
+When the passphrase is stored in the keychain, it is available anytime
+the keychain is unlocked (including when logged in after a reboot).
+
+To list all identities currently represented by the agent, execute:
+
+```sh
+ssh-add -l
+```
+
+To remove an identity from the agent, execute:
+
+```
+ssh-add -d ~/.ssh/id_ed25519.pub
+```
+
+To remove all identities from the agent, execute:
+
+```
+ssh-add -D
+```
