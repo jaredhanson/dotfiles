@@ -38,6 +38,13 @@ To remove an identity from the agent, execute:
 ssh-add -d ~/.ssh/id_ed25519.pub
 ```
 
+To remove an identity from the agent and remove the passphrase in the user's
+keychain on macOS, execute the command with the `--apple-use-keychain` option:
+
+```sh
+ssh-add -d --apple-use-keychain ~/.ssh/id_ed25519.pub
+```
+
 To remove all identities from the agent, execute:
 
 ```
