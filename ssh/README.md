@@ -26,6 +26,8 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 When the passphrase is stored in the keychain, it is available anytime
 the keychain is unlocked (including when logged in after a reboot).
 
+TODO: See if additional config is necessary? ([here](https://apple.stackexchange.com/questions/48502/how-can-i-permanently-add-my-ssh-private-key-to-keychain-so-it-is-automatically), [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent))
+
 To list all identities currently represented by the agent, execute:
 
 ```sh
