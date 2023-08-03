@@ -1,2 +1,0 @@
-install:
-	brew install direnv
