@@ -1,6 +1,6 @@
 # ~ / .dotfiles / nvm
 
-[nvm](https://github.com/nvm-sh/nvm) allows installing and switching between
+[`nvm`](https://github.com/nvm-sh/nvm) allows installing and switching between
 multiple versions of [Node.js](https://nodejs.org/).
 
 ## Install

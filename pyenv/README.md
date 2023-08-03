@@ -1,6 +1,6 @@
 # ~ / .dotfiles / pyenv
 
-[pyenv](https://github.com/pyenv/pyenv) allows installing and switching between
+[`pyenv`](https://github.com/pyenv/pyenv) allows installing and switching between
 multiple versions of [Python](https://www.python.org/).
 
 ## Install
