@@ -23,6 +23,12 @@ To generate a new key pair (a.k.a. identity) and write it to a file:
 age-keygen -o key.txt
 ```
 
+To generate a new passphrase-protected key pair and write it to a file:
+
+```sh
+age-keygen | age -p > key.age
+```
+
 To print the public key of an identity file to the terminal:
 
 ```sh
