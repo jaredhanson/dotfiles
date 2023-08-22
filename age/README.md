@@ -29,14 +29,26 @@ To print the public key of an identity file to the terminal:
 age-keygen -y key.txt
 ```
 
-To encrypt a file:
+To encrypt a file to a recipient:
 
 ```sh
 age -r age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5sfn9aqmcac8p -o example.jpg.age example.jpg
 ```
 
-To decrypt a file:
+To decrypt a file for a recipient:
 
 ```sh
 age -d -i key.txt -o example.jpg example.jpg.age
+```
+
+To encrypt a file with a passphrase:
+
+```sh
+age -p -o example.jpg.age example.jpg
+```
+
+To decrypt a file with a passphrase:
+
+```sh
+age -d -o example.jpg example.jpg.age
 ```
