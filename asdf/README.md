@@ -33,4 +33,4 @@ To set the default version of a tool, execute:
 $ asdf global deno 1.29.4
 ```
 
-This command will update the configuraiton file at `$HOME/.tool-versions`.
+This command will update the configuration file at `$HOME/.tool-versions`.

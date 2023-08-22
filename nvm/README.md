@@ -1,6 +1,6 @@
 # ~ / .dotfiles / nvm
 
-[nvm](https://github.com/nvm-sh/nvm) allows installing and switching between
+[`nvm`](https://github.com/nvm-sh/nvm) allows installing and switching between
 multiple versions of [Node.js](https://nodejs.org/).
 
 ## Install
@@ -19,6 +19,14 @@ $ nvm install 20.5.0
 
 This command will download and install Node.js to `$HOME/.nvm/versions/node/v{version}`.
 
+To set the default version of Node.js, execute:
+
+```sh
+$ nvm alias default 20.5.0
+```
+
+This command will update the configuration file at `$HOME/.nvm/alias/default`.
+
 To use a specific version of Node.js, execute:
 
 ```sh
@@ -35,10 +43,4 @@ To list installed versions of Node.js, execute:
 
 ```sh
 $ nvm ls
-```
-
-To set the default version of Node.js, execute:
-
-```sh
-$ nvm alias default 20.5.0
 ```
