@@ -8,6 +8,13 @@
 brew install age
 ```
 
+#### Install Secure Enclave plugin
+
+```sh
+brew tap remko/age-plugin-se https://github.com/remko/age-plugin-se
+brew install age-plugin-se
+```
+
 ## Usage
 
 To generate a new key pair (a.k.a. identity) and write it to a file:
