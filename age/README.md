@@ -1,0 +1,35 @@
+# ~ / .dotfiles / age
+
+[`age`](https://age-encryption.org/) is a modern file encryption tool.
+
+## Install
+
+```sh
+brew install age
+```
+
+## Usage
+
+To generate a new key pair (a.k.a. identity) and write it to a file:
+
+```sh
+age-keygen -o key.txt
+```
+
+To print the public key of an identity file to the terminal:
+
+```sh
+age-keygen -y key.txt
+```
+
+To encrypt a file:
+
+```sh
+age -r age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5sfn9aqmcac8p -o example.jpg.age example.jpg
+```
+
+To decrypt a file:
+
+```sh
+age -d -i key.txt -o example.jpg example.jpg.age
+```
