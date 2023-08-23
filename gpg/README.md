@@ -21,7 +21,7 @@ GnuPG needs to construct a user ID to identify your key.
 Real name: 
 Email address: 
 You selected this USER-ID:
-    "Alice Smith <alice.smith@example.com>"
+    "Alice Smith <alice@example.com>"
 
 Change (N)ame, (E)mail, or (O)kay/(Q)uit? 
 
@@ -45,4 +45,16 @@ To list all secret keys in the keyring:
 
 ```bash
 $ gpg --list-secret-keys
+```
+
+To export a public key from the keyring in ASCII armored output:
+
+```bash
+$ gpg --export -a alice@example.com > public.asc
+```
+
+To export a secret key from the keyring in ASCII armored output:
+
+```bash
+gpg --export-secret-key -a alice@example.com > secret.asc
 ```
