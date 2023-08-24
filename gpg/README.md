@@ -56,5 +56,33 @@ $ gpg --export -a alice@example.com > public.asc
 To export a secret key from the keyring in ASCII armored output:
 
 ```bash
-gpg --export-secret-key -a alice@example.com > secret.asc
+$ gpg --export-secret-key -a alice@example.com > secret.asc
 ```
+
+To import a public key into the keyring:
+
+```
+$ gpg --import public.asc
+```
+
+To import a secret key into the keyring:
+
+```
+$ gpg --import --allow-secret-key-import secret.asc
+```
+
+To remove a public key from the keyring:
+
+```
+$ gpg --delete-key alice@example.com
+```
+
+Note that if there is a secret key for the public key, it must be deleted first.
+Otherwise the command will fail.
+
+To remove a secret key from the keyring:
+
+```
+$ gpg --delete-secret-key alice@example.com
+```
+
