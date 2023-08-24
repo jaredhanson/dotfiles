@@ -100,3 +100,5 @@ To decrypt a file:
 ```sh
 gpg -d example.txt.gpg > example.txt
 ```
+
+If the decrypted file is signed, the signature is also verified.
