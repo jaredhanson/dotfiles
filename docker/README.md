@@ -54,3 +54,9 @@ docker stop <container-id>
 
 This command will stop the container with ID `<container-id>`.  The ID can be
 obtained from the output of `docker ps`.
+
+To remove a stopped container, execute:
+
+```sh
+docker rm <container-id>
+```
