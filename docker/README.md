@@ -13,6 +13,15 @@ Install [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-ins
 
 ## Usage
 
+To build a container, execute:
+
+```sh
+docker build -t <name> .
+```
+
+This command will build a new image named `<name>` using the `Dockerfile` in the
+current directory `.`.
+
 To list containers, execute:
 
 
