@@ -13,7 +13,7 @@ Install [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-ins
 
 ## Usage
 
-To build a container, execute:
+To build an image, execute:
 
 ```sh
 docker build -t <name> .
@@ -21,6 +21,16 @@ docker build -t <name> .
 
 This command will build a new image named `<name>` using the `Dockerfile` in the
 current directory `.`.
+
+To run a new container, execute:
+
+```
+docker run -d -p 127.0.0.1:8080:3000 <name>
+```
+
+This command will create and run a new container from the imaged named `<name>`.
+The container will run in the background (`-d`) and the address `127.0.0.1:8080`
+on the host will be mapped to port `3000` on the container (`-p`).
 
 To list containers, execute:
 
