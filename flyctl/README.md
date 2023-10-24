@@ -8,3 +8,11 @@ applications on [Fly.io](https://fly.io/).
 ```sh
 brew install flyctl
 ```
+
+## Usage
+
+To log in, execute:
+
+```sh
+$ flyctl auth login
+```
