@@ -24,7 +24,7 @@ current directory `.`.
 
 To run a new container, execute:
 
-```
+```sh
 docker run -d -p 127.0.0.1:8080:3000 <name>
 ```
 
@@ -45,3 +45,12 @@ including those that have exited, execute:
 ```sh
 $ docker ps -a
 ```
+
+To stop a running container, execute:
+
+```sh
+docker stop <container-id>
+```
+
+This command will stop the container with ID `<container-id>`.  The ID can be
+obtained from the output of `docker ps`.
