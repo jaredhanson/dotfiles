@@ -60,3 +60,15 @@ To remove a stopped container, execute:
 ```sh
 docker rm <container-id>
 ```
+
+To create a volume, execute:
+
+```sh
+docker volume create <name>
+```
+
+To create a network, execute:
+
+```sh
+docker network create <name>
+```
