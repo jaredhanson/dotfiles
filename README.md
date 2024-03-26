@@ -14,6 +14,13 @@ they are shared with the [community](https://dotfiles.github.io).  The
 repository also serves as an effective mechanism for synchronizing settings
 across machines.
 
+Each tool I use (and for which this configuration is managed by this repository)
+has a directory.  Within that directory is a `README` file that describes the
+purpose of the tool, how to install it, and tips on usage.  Because some of
+these tools are used on an infrequent basis, the `README` serves as a refresher
+using the tool in the future.  Configuration files for the tool, if any, are
+also located within the directory.
+
 ## Install
 
 ```sh
@@ -58,6 +65,8 @@ To unsintall the configuration files for a package (`git` in this example):
 ```sh
 $ stow -D git
 ```
+
+## Install
 
 #### Setting up a new macOS system
 
