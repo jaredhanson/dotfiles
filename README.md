@@ -21,12 +21,6 @@ these tools are used on an infrequent basis, the `README` serves as a refresher
 using the tool in the future.  Configuration files for the tool, if any, are
 also located within the directory.
 
-## Install
-
-```sh
-$ git clone git@github.com:jaredhanson/dotfiles.git ~/.dotfiles
-```
-
 ## Usage
 
 [Stow](https://www.gnu.org/software/stow/) is used to manage configuration files
