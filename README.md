@@ -45,7 +45,7 @@ $ cd $HOME/.dotfiles
 To install the configuration files for a package
 
 ```sh
-$ stow _package_
+$ stow __package__
 ```
 
 For example:
