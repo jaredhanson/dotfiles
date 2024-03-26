@@ -22,6 +22,29 @@ $ git clone git@github.com:jaredhanson/dotfiles.git ~/.dotfiles
 
 ## Usage
 
+[Stow](https://www.gnu.org/software/stow/) is used to manage configuration files
+in the home directory.
+
+### Initialization
+
+Clone the repository to a subdirectory of `$HOME`.
+
+```sh
+$ git clone git@github.com:jaredhanson/dotfiles.git $HOME/.dotfiles
+```
+
+`$HOME/.dotfiles` is the _stow directory_.  Subsequent `stow` commands must
+be executed with the stow directory set to the current directory.
+
+```sh
+$ cd $HOME/.dotfiles
+```
+
+### Install
+
+
+
+
 #### Setting up a new macOS system
 
 
