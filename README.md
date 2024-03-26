@@ -42,18 +42,11 @@ $ cd $HOME/.dotfiles
 
 ### Install
 
-To install the configuration files for a package
-
-```sh
-$ stow __package__
-```
-
-For example:
+To install the configuration files for a package (`git` in this example):
 
 ```
 $ stow git
 ```
-
 
 #### Setting up a new macOS system
 
