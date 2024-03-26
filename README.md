@@ -34,7 +34,7 @@ $ git clone git@github.com:jaredhanson/dotfiles.git $HOME/.dotfiles
 ```
 
 `$HOME/.dotfiles` is the _stow directory_.  Subsequent `stow` commands must
-be executed with the stow directory set to the current directory.
+be executed with the current directory set to the stow directory.
 
 ```sh
 $ cd $HOME/.dotfiles
