@@ -1,6 +1,18 @@
 # dotfiles
 
-User-specific application configuration.
+[Jared Hanson](https://www.jaredhanson.me/)'s user-specific application configuration.
+
+[dotfiles](https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments)
+are configuration files that, by convention, start with a `.` character.
+Applications in UNIX-like operating systems (such as Linux and Mac OS X) load
+configuration from dotfiles.  This configuration is particularly applicable
+to software development tools.
+
+This repository contains my personal dotfiles, configuring the tools I use in
+my own development environment and workflow.  In the spirit of [open collaboration](https://en.wikipedia.org/wiki/Open_collaboration),
+they are shared with the [community](https://dotfiles.github.io).  The
+repository also serves as an effective mechanism for synchronizing settings
+across machines.
 
 ## Install
 
