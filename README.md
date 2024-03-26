@@ -48,6 +48,17 @@ To install the configuration files for a package (`git` in this example):
 $ stow git
 ```
 
+This command will create a symlink from `$HOME/.gitconfig` to `$HOME/.dotfiles/git/.gitconfig`,
+as well as any other configuration files for the package.
+
+### Uninstall
+
+To unsintall the configuration files for a package (`git` in this example):
+
+```sh
+$ stow -D git
+```
+
 #### Setting up a new macOS system
 
 
