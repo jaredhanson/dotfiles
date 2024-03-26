@@ -55,13 +55,15 @@ the package.
 
 ### Uninstall
 
-To unsintall the configuration files for a package (`git` in this example):
+To uninstall the configuration files for a package (`git` in this example):
 
 ```sh
 $ stow -D git
 ```
 
 ## Install
+
+
 
 #### Setting up a new macOS system
 
