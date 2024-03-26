@@ -18,8 +18,8 @@ Each tool I use (and for which configuration is managed by this repository) has
 a directory.  Within that directory is a `README` file that describes the
 purpose of the tool, how to install it, and tips on usage.  Because some of
 these tools are used on an infrequent basis, the `README` serves as a refresher
-using the tool in the future.  Configuration files for the tool, if any, are
-also located within the directory.
+when using the tool in the future.  Configuration files for the tool, if any,
+are also located within the directory.
 
 ## Usage
 
