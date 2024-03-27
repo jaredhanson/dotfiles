@@ -90,7 +90,10 @@ remote repository.
 
 ### Prepare Operating System
 
-To the extent possible, system-provided 
+To the extent possible, system-provided programs are used to install packages
+and manage configuration.  This minimizes the number of dependencies needed to
+set up a new machine.  In cases where these prerequisites are not provided, the
+following instructions are used to prepare the operating system.
 
 #### macOS
 
@@ -101,30 +104,14 @@ To the extent possible, system-provided
 
 To install Homebrew:
 
+```sh
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
-$ /bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
 
+##### Install Stow
 
-
+To install Stow:
 
 ```sh
-$ cd ~/.dotfiles/brew
-$ make install
-
-$ cd ~/.dotfiles/stow
-$ make install
+$ brew install stow
 ```
-
-
-# New Instructions
-
-Install homebrew
-
-$ eval "$(/opt/homebrew/bin/brew shellenv)"
-
-Install dependencies, including stow
-
-$ brew bundle
-
-stow zsh
