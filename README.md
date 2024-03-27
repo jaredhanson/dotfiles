@@ -26,7 +26,7 @@ are also located within the directory.
 [Stow](https://www.gnu.org/software/stow/) is used to manage configuration files
 in the home directory.
 
-### Initialization
+### Initialize
 
 Clone the repository to a subdirectory of `$HOME`.
 
