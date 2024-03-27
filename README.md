@@ -98,7 +98,7 @@ following instructions are used to prepare the operating system.
 #### macOS
 
 [macOS](https://www.apple.com/macos/) does not have a package manager, so
-[Homebrew](https://brew.sh/) is used instead.
+[Homebrew](https://brew.sh/) is used as an alternative.
 
 ##### Install Homebrew
 
