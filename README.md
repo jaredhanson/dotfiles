@@ -61,22 +61,52 @@ To uninstall the configuration files for a package (`git` in this example):
 $ stow -D git
 ```
 
-## Install
+## Set Up
 
+### Generate SSH Key
 
+As a best practice, each machine should have its own SSH key.  This improves
+security by allowing access to be managed and audited on a per-device basis.
+In the event a device is lost or compromised, its access can be revoked without
+impacting other devices.
 
-#### Setting up a new macOS system
+To [generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key):
 
-
-Because these dotfiles are stored on GitHub, they first need to be cloned to the
-local system.  But in order to do this, the local system needs access to GitHub.
-
-This can be done by [generating a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
-for the new system.
-
-```
+```sh
 $ ssh-keygen -t ed25519 -C "jaredhanson@macbook-pro-2021.local"
 ```
+
+> [!TIP]
+> I like to use `user@host` format for the comment, where `host` is the device
+> name.
+
+### Add SSH Key to GitHub account
+
+Once the machine's SSH key has been generated, [add it to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account).
+
+You can now [clone this repository](https://github.com/jaredhanson/dotfiles?tab=readme-ov-file#initialization),
+and synchronize configuration across machines by pushing and pulling from the
+remote repository.
+
+### Prepare Operating System
+
+To the extent possible, system-provided 
+
+#### macOS
+
+[macOS](https://www.apple.com/macos/) does not have a package manager, so
+[Homebrew](https://brew.sh/) is used instead.
+
+##### Install Homebrew
+
+To install Homebrew:
+
+```
+$ /bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+
+
 
 ```sh
 $ cd ~/.dotfiles/brew
