@@ -31,14 +31,14 @@ in the home directory.
 Clone the repository to a subdirectory of `$HOME`.
 
 ```sh
-$ git clone git@github.com:jaredhanson/dotfiles.git $HOME/.dotfiles
+git clone git@github.com:jaredhanson/dotfiles.git $HOME/.dotfiles
 ```
 
 `$HOME/.dotfiles` is the _stow directory_.  Subsequent `stow` commands must
 be executed with the current directory set to the stow directory.
 
 ```sh
-$ cd $HOME/.dotfiles
+cd $HOME/.dotfiles
 ```
 
 ### Install
@@ -46,7 +46,7 @@ $ cd $HOME/.dotfiles
 To install the configuration files for a package (`git` in this example):
 
 ```
-$ stow git
+stow git
 ```
 
 This command will create a symbolic link from `$HOME/.gitconfig` to
@@ -58,7 +58,7 @@ the package.
 To uninstall the configuration files for a package (`git` in this example):
 
 ```sh
-$ stow -D git
+stow -D git
 ```
 
 ## Set Up
@@ -73,7 +73,7 @@ impacting other devices.
 To [generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key):
 
 ```sh
-$ ssh-keygen -t ed25519 -C "jaredhanson@macbook-pro-2021.local"
+ssh-keygen -t ed25519 -C "jaredhanson@macbook-pro-2021.local"
 ```
 
 > [!TIP]
@@ -105,7 +105,7 @@ following instructions are used to prepare the operating system.
 To install Homebrew:
 
 ```sh
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
 ##### Install Stow
@@ -113,5 +113,5 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 To install Stow:
 
 ```sh
-$ brew install stow
+brew install stow
 ```
