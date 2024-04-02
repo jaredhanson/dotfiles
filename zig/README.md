@@ -11,7 +11,8 @@ speed of development.  As such, use of nightly builds is encouraged.
 Tracking builds results in a proliferation of versions to manage.  While this
 can be done by [downloading](https://ziglang.org/download/) archives, extracting
 them, and [setting $PATH accordingly](https://ziglang.org/learn/getting-started/#direct-download),
-using a version manager such as [`asdf`](https://asdf-vm.com/) is my preferred approach.
+using a version manager such as [`asdf`](https://asdf-vm.com/) is my preferred
+approach.
 
 ### asdf
 
