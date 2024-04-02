@@ -12,7 +12,6 @@ the app will prompt to install `ollama` to `/usr/local/bin`.
 
 ## Usage
 
-
 To run a model, execute:
 
 ```
