@@ -1,6 +1,6 @@
 # ~ / .dotfiles / zig
 
-[`zig`](https://ziglang.org/) is a general-purpose programming language and
+[Zig](https://ziglang.org/) is a general-purpose programming language and
 toolchain for maintaining robust, optimal and reusable software.
 
 ## Install

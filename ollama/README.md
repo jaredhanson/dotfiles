@@ -1,6 +1,6 @@
 # ~ / .dotfiles / ollama
 
-[`ollama`](https://ollama.com/) allows running large language models locally.
+[Ollama](https://ollama.com/) allows running large language models locally.
 
 ## Install
 
