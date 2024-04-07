@@ -22,4 +22,8 @@ On macOS, this command will save the authtoken to the configuration file at
 
 ## Usage
 
-$ ./ngrok http 8080
+To start an HTTP tunnel, execute:
+
+```sh
+ngrok http http://localhost:8080
+```
