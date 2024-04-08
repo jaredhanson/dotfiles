@@ -41,7 +41,7 @@ be executed with the current directory set to the stow directory.
 cd $HOME/.dotfiles
 ```
 
-### Install
+### Configure
 
 To install the configuration files for a package (`git` in this example):
 
@@ -53,7 +53,7 @@ This command will create a symbolic link from `$HOME/.gitconfig` to
 `$HOME/.dotfiles/git/.gitconfig`, as well as any other configuration files for
 the package.
 
-### Uninstall
+### Unconfigure
 
 To uninstall the configuration files for a package (`git` in this example):
 
