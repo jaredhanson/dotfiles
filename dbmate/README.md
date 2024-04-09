@@ -22,3 +22,14 @@ dbmate dump
 ```
 
 This command will dump the database schema to `./db/schema.sql`.
+
+
+To create a new migration, execute:
+
+```sh
+dbmate new create_users_table
+```
+
+```sh
+dbmate up
+```
