@@ -24,3 +24,9 @@ For compilers to find libpq you may need to set:
 For pkg-config to find libpq you may need to set:
   export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
 ```
+
+## Configure
+
+```sh
+stow postgresql
+```
