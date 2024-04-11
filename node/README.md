@@ -10,8 +10,6 @@ multiple versions of Node.
 
 ### nvm
 
-## Install
-
 Install `nvm`.
 
 ```sh
