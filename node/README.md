@@ -32,6 +32,12 @@ nvm alias default 20.5.0
 
 This command will update the configuration file at `$HOME/.nvm/alias/default`.
 
+## Configure
+
+```sh
+stow node
+```
+
 ## Usage
 
 To print the version number, execute:
