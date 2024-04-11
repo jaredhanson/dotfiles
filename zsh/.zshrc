@@ -38,13 +38,8 @@ if command -v pyenv >/dev/null ; then
 	eval "$(pyenv init -)"
 fi
 
+for file in $HOME/.zshrc.d/*(.); do
+	. $file
+done
 
-# =============================================================================
-# Node.js Developer Environment
-# =============================================================================
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-#export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+	
