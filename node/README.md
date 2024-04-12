@@ -48,12 +48,6 @@ node -v
 
 ### nvm
 
-To use a specific version of Node.js, execute:
-
-```sh
-nvm use 18.17.0
-```
-
 To display the currently actived version of Node.js, execute:
 
 ```sh
@@ -64,4 +58,10 @@ To list installed versions of Node.js, execute:
 
 ```sh
 nvm ls
+```
+
+To use a specific version of Node.js, execute:
+
+```sh
+nvm use 18.17.0
 ```
