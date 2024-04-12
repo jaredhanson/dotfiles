@@ -41,6 +41,12 @@ asdf global deno 1.35.3
 
 This command will update the configuration file at `$HOME/.tool-versions`.
 
+To display the currently actived version of a tool, execute:
+
+```sh
+asdf current deno
+```
+
 To list installed versions of a tool, execute:
 
 ```sh
