@@ -12,7 +12,7 @@
 # Developer Environment
 # =============================================================================
 
-[ -s "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"
+#[ -s "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"
 
 if command -v direnv >/dev/null ; then
 	eval "$(direnv hook zsh)"
@@ -38,7 +38,7 @@ if command -v pyenv >/dev/null ; then
 	eval "$(pyenv init -)"
 fi
 
-for file in $HOME/.zshrc.d/*(.); do
+for file in $HOME/.zshrc.d/*; do
 	. $file
 done
 
