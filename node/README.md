@@ -48,7 +48,7 @@ node -v
 
 ### nvm
 
-To display the currently actived version of Node.js, execute:
+To display the currently active version of Node.js, execute:
 
 ```sh
 nvm current

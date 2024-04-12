@@ -48,7 +48,7 @@ python --version
 
 ### pyenv
 
-To display the currently actived version of Python, execute:
+To display the currently active version of Python, execute:
 
 ```sh
 pyenv version
