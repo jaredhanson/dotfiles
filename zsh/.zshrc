@@ -12,10 +12,6 @@
 # Developer Environment
 # =============================================================================
 
-if command -v direnv >/dev/null ; then
-	eval "$(direnv hook zsh)"
-fi
-
 
 # =============================================================================
 # Python Developer Environment
@@ -39,5 +35,3 @@ fi
 for file in $HOME/.zshrc.d/*; do
 	. $file
 done
-
-	

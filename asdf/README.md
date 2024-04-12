@@ -9,6 +9,12 @@ multiple versions of various tools.
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
 ```
 
+## Configure
+
+```sh
+stow asdf
+```
+
 ## Usage
 
 To install a plugin for managing a tool, execute:

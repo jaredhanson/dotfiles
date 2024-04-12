@@ -9,6 +9,12 @@ working directory.
 brew install direnv
 ```
 
+## Configure
+
+```sh
+stow direnv
+```
+
 ## Usage
 
 To allow loading of the current working directory's `.envrc` file, execute:
