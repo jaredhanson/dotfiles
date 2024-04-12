@@ -27,11 +27,6 @@
 #
 # [1]: https://github.com/pyenv/pyenv
 
-if command -v pyenv >/dev/null ; then
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init -)"
-fi
-
 for file in $HOME/.zshrc.d/*; do
 	. $file
 done
