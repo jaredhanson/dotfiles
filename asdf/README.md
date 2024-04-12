@@ -36,7 +36,29 @@ This command will download and install the tool to `$HOME/.asdf/installs/{name}/
 To set the default version of a tool, execute:
 
 ```sh
-asdf global deno 1.29.4
+asdf global deno 1.35.3
 ```
 
 This command will update the configuration file at `$HOME/.tool-versions`.
+
+To list installed versions of a tool, execute:
+
+```sh
+asdf list deno
+```
+
+To use a specific version of a tool in the current shell, execute:
+
+```sh
+asdf shell deno 1.29.4
+```
+
+This command will set the environment variable at `$ASDF_{NAME}_VERSION`.
+
+To use a specific version of a tool for a project, execute:
+
+```sh
+asdf local deno 1.29.4
+```
+
+This command will update the configuration file at `$PWD/.tool-versions`.
