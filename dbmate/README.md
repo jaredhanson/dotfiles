@@ -17,11 +17,13 @@ brew install dbmate
 
 ## Usage
 
+To dump the database schema, execute:
+
 ```sh
 dbmate dump
 ```
 
-This command will dump the database schema to `./db/schema.sql`.
+This command will write the database schema to `./db/schema.sql`.
 
 To create a new migration, execute:
 
@@ -39,4 +41,10 @@ To rollback the most recent migration, execute:
 
 ```sh
 dbmate down
+```
+
+To drop the database:
+
+```sh
+dbmate drop
 ```
