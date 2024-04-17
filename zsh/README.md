@@ -14,3 +14,5 @@ As of macOS 10.15 (Catalina), `zsh` is the default shell.
 ```sh
 stow zsh
 ```
+
+## Usage
