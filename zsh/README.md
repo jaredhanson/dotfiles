@@ -17,8 +17,8 @@ stow zsh
 
 ## Usage
 
-When `zsh` starts, it sources the following files, in order, to initialize the
-environment.
+When `zsh` starts, it reads commands from the following files, in order, to
+initialize the environment.
 
 [reads from files](https://zsh.sourceforge.io/Intro/intro_3.html) to initialize the environment.  These [files](https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout/71258#71258), in order, are
 
