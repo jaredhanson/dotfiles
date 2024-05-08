@@ -30,3 +30,9 @@ flyctl auth logout
 ```
 
 ## Usage
+
+To create an app, execute:
+
+```sh
+flyctl apps create
+```
