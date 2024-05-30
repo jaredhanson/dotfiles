@@ -11,5 +11,5 @@ Swift is included with [Xcode](https://developer.apple.com/xcode/).
 To print the version number, execute:
 
 ```sh
-swift -version
+swift --version
 ```
