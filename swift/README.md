@@ -1,5 +1,8 @@
 # ~ / .dotfiles / swift
 
+[Swift](https://www.swift.org/) is a general-purpose programming language that's
+approachable for newcomers and powerful for experts.
+
 ## Install
 
 ### macOS
