@@ -17,3 +17,6 @@ To run a model, execute:
 ```
 ollama run llama2
 ```
+
+This command will download the model's manifest to `$HOME/.ollama/models/manifests/registry.ollama.ai/library/{model}`.
+Associated blobs will be downloaded to `$HOME/.ollama/models/blobs`.
