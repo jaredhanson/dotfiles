@@ -40,5 +40,5 @@ flyctl apps create
 To create a Postgres cluster, execute:
 
 ```sh
-fly postgres create
+flyctl postgres create
 ```
