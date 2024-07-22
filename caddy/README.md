@@ -26,5 +26,20 @@ Or, if you don't want/need a background service you can just run:
 ```
 
 
+## Configure
+
+```sh
+stow caddy
+```
+
+## Usage
+
+```
+caddy run --config ~/.config/caddy/Caddyfile
+```
+
+
 https://caddyserver.com/docs/quick-starts/reverse-proxy
 https://datatracker.ietf.org/doc/html/rfc6761#section-6.3
+
+https://bugs.webkit.org/show_bug.cgi?id=160504
