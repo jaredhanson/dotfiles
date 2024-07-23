@@ -63,6 +63,9 @@ Stops the service and removes the config file
 
 
 https://caddyserver.com/docs/quick-starts/reverse-proxy
+^ Talks about domains ending in .localhost
+
+
 https://datatracker.ietf.org/doc/html/rfc6761#section-6.3
 
 https://bugs.webkit.org/show_bug.cgi?id=160504
