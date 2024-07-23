@@ -18,10 +18,7 @@ docker run -d --name some-postgres -p 127.0.0.1:5432:5432 -e POSTGRES_PASSWORD=m
 
 To run with a volume:
 
-```
-docker volume create some-data
-```
 
 ```
-docker run -d --name some-postgres -p 127.0.0.1:5432:5432 -v some-data:/var/lib/postgresql/data -e POSTGRES_PASSWORD=mysecretpassword postgres
+docker run -d --name some-postgres -p 127.0.0.1:5432:5432 -v postgresql:/var/lib/postgresql/data -e POSTGRES_PASSWORD=mysecretpassword postgres
 ```
