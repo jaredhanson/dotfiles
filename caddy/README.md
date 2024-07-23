@@ -38,6 +38,29 @@ stow caddy
 caddy run --config ~/.config/caddy/Caddyfile
 ```
 
+```sh
+brew services start caddy
+```
+
+This will add a LaunchAgent configuration file to:
+~/Library/LaunchAgents/homebrew.mxcl.caddy.plist
+
+Create a Caddyfile for homebrew that loads the stow'd dotfile:
+
+/opt/homebrew/etc/Caddyfile
+
+```
+import {$HOME}/.config/caddy/Caddyfile
+```
+
+```sh
+brew services start caddy
+```
+
+Stops the service and removes the config file
+
+
+
 
 https://caddyserver.com/docs/quick-starts/reverse-proxy
 https://datatracker.ietf.org/doc/html/rfc6761#section-6.3
