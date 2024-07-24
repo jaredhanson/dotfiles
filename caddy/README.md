@@ -5,6 +5,8 @@ services and apps.
 
 ## Install
 
+https://caddyserver.com/docs/install
+
 ### macOS
 
 ```sh
@@ -37,6 +39,26 @@ stow caddy
 ```
 caddy run --config ~/.config/caddy/Caddyfile
 ```
+
+When you first start caddy with a site that uses `*.localhost` it will prompt for a password
+after logging  a line:
+
+```
+2024/07/24 22:30:10.797	WARN	pki.ca.local	installing root certificate (you might be prompted for password)	{"path": "storage:pki/authorities/local/root.crt"}
+```
+
+followed by:
+
+```
+2024/07/24 22:33:42.951	INFO	certificate installed properly in macOS keychain
+```
+
+In Keychain, you'll find a new cert named "Caddy Local Authority - 2024 ECC Root"
+
+The cert files can be found at: $(HOME)/Library/Application Support/Caddy/pki/authorities/local
+
+
+
 
 ```sh
 brew services start caddy
