@@ -36,3 +36,9 @@ To create an app, execute:
 ```sh
 flyctl apps create
 ```
+
+To create a Postgres cluster, execute:
+
+```sh
+flyctl postgres create
+```

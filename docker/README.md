@@ -67,6 +67,12 @@ To create a volume, execute:
 docker volume create <name>
 ```
 
+To remove a volume, execute:
+
+```
+docker volume rm <name>
+```
+
 To create a network, execute:
 
 ```sh

@@ -1,0 +1,2 @@
+# NOTE: Rust originally put this in .zshenv
+. "$HOME/.cargo/env"
