@@ -71,12 +71,28 @@ Create a Caddyfile for homebrew that loads the stow'd dotfile:
 
 /opt/homebrew/etc/Caddyfile
 
+
+Logs can be viewed by `tail -f /opt/homebrew/var/log/caddy.log`
+
 ```
 import {$HOME}/.config/caddy/Caddyfile
 ```
 
+This seems to create a new CA, which can't prompt for a password to install.  Files
+are stored at: /opt/homebrew/var/lib/caddy/pki/authorities/local
+
+Separately run this
+
+```
+caddy trust
+```
+
+as suggested by:
+https://caddyserver.com/docs/running
+
+
 ```sh
-brew services start caddy
+brew services stop caddy
 ```
 
 Stops the service and removes the config file
