@@ -1,6 +1,6 @@
 # ~ / .dotfiles / flyctl
 
-[`flyctl`](https://fly.io/docs/flyctl/) allows managing and deploying
+[`flyctl`](https://fly.io/docs/flyctl/) allows deploying and managing
 applications on [Fly.io](https://fly.io/).
 
 ## Install
