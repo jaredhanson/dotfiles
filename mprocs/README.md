@@ -10,3 +10,9 @@ and shows output of each command separately.
 ```sh
 brew install mprocs
 ```
+
+## Configure
+
+```sh
+stow mprocs
+```
