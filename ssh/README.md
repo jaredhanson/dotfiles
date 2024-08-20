@@ -32,12 +32,19 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ```
 
 > [!NOTE]
-> In macOS versions prior to Monterey (12.0), use the `-K` flag, as follows:
+> On macOS prior to 12.0, use the `-K` flag, as follows:
 >
 > `ssh-add -K ~/.ssh/id_ed25519`.
 
 When the passphrase is stored in the keychain, it is available anytime
 the keychain is unlocked (including when logged in after a reboot).
+
+> [!NOTE]
+> On macOS 10.12.2 or later, SSH must be [configured](https://developer.apple.com/library/archive/technotes/tn2449/_index.html)
+> to use the keychain.  The necessary options are supplied in these dotfiles,
+> which can be installed by executing:
+>
+> `stow ssh`.
 
 TODO: See if additional config is necessary? ([here](https://apple.stackexchange.com/questions/48502/how-can-i-permanently-add-my-ssh-private-key-to-keychain-so-it-is-automatically), [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent))
 
