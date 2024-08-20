@@ -32,8 +32,7 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ```
 
 > [!NOTE]
-> In macOS versions prior to Monterey (12.0), the `--apple-use-keychain` flag
-> used the syntax `-K`, as follows:
+> In macOS versions prior to Monterey (12.0), use the `-K` flag, as follows:
 >
 > `ssh-add -K ~/.ssh/id_ed25519`.
 
