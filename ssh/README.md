@@ -2,6 +2,12 @@
 
 [SSH](https://www.openssh.com/) is...
 
+## Configure
+
+```sh
+stow ssh
+```
+
 ## Usage
 
 To generate a key, execute:
