@@ -49,8 +49,6 @@ the keychain is unlocked (including when logged in after a reboot).
 > See also: [SO-48502](https://apple.stackexchange.com/questions/48502/how-can-i-permanently-add-my-ssh-private-key-to-keychain-so-it-is-automatically),
 > [GH-lionheart/openradar-mirror#15361](https://github.com/lionheart/openradar-mirror/issues/15361).
 
-TODO: See if additional config is necessary? ([here](https://apple.stackexchange.com/questions/48502/how-can-i-permanently-add-my-ssh-private-key-to-keychain-so-it-is-automatically), [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent))
-
 To list all identities currently represented by the agent, execute:
 
 ```sh
