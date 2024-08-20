@@ -34,6 +34,7 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 > [!NOTE]
 > In macOS versions prior to Monterey (12.0), the `--apple-use-keychain` flag
 > used the syntax `-K`, as follows:
+>
 > `ssh-add -K ~/.ssh/id_ed25519`.
 
 When the passphrase is stored in the keychain, it is available anytime
