@@ -1,6 +1,8 @@
 # ~ / .dotfiles / ssh
 
-[SSH](https://www.openssh.com/) is...
+[SSH](https://www.openssh.com/) is a tool for secure shell access to a remote
+computer.  It is often used to access infrastructure hosted by AWS, [GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh),
+and many other providers.
 
 ## Configure
 
@@ -28,6 +30,10 @@ macOS, execute the command with the `--apple-use-keychain` option:
 ```sh
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ```
+
+> [!NOTE]
+> In macOS versions prior to Monterey (12.0), the `--apple-use-keychain` flag
+> used the syntax `-K`, as follows: `ssh-add -K ~/.ssh/id_ed25519`.
 
 When the passphrase is stored in the keychain, it is available anytime
 the keychain is unlocked (including when logged in after a reboot).
