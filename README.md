@@ -10,7 +10,7 @@ to software development tools.
 
 This repository contains my personal dotfiles, configuring the tools I use in
 my development environment.  In the spirit of [open collaboration](https://en.wikipedia.org/wiki/Open_collaboration),
-they are shared with the [community](https://dotfiles.github.io).  The
+they are shared with the [community](https://dotfiles.github.io/).  The
 repository also serves as an effective mechanism for synchronizing settings
 across machines.
 
