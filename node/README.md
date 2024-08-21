@@ -65,3 +65,8 @@ To use a specific version of Node.js, execute:
 ```sh
 nvm use 18.17.0
 ```
+
+## See Also
+
+- [../bun](bun) - A JavaScript runtime written in [Zig](https://ziglang.org/)
+  and powered by [JavaScriptCore](https://docs.webkit.org/Deep%20Dive/JSC/JavaScriptCore.html).
