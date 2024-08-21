@@ -19,3 +19,8 @@ To get started, run:
   exec /bin/zsh 
   bun --help 
 ```
+
+## See Also
+
+- [`node`](../node/) - A JavaScript runtime written in C++, leveraging [libuv](https://libuv.org/)
+  and powered by [V8](https://v8.dev/).
