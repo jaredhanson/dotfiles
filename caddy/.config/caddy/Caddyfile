@@ -1,3 +1,5 @@
 # https://caddyserver.com/docs/caddyfile/directives/import
 
+# cd sites-enabled
+# ln -s ../sites-available/default
 import sites-enabled/*
