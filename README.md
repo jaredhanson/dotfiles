@@ -87,7 +87,7 @@ ssh-keygen -t ed25519 -C "jaredhanson@macbook-pro-2021.local"
 
 Once the machine's SSH key has been generated, [add it to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account).
 
-You can now [clone this repository](https://github.com/jaredhanson/dotfiles?tab=readme-ov-file#initialization),
+You can now [clone this repository](https://github.com/jaredhanson/dotfiles?tab=readme-ov-file#initialize),
 and synchronize configuration across machines by pushing and pulling from the
 remote repository.
 
