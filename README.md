@@ -1,6 +1,7 @@
 # dotfiles
 
-[Jared Hanson](https://www.jaredhanson.me/)'s user-specific application configuration.
+[Jared Hanson](https://www.jaredhanson.me/)'s user-specific application
+configuration.
 
 [dotfiles](https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments)
 are configuration files that, by convention, start with a `.` character.
@@ -62,6 +63,8 @@ stow -D git
 ```
 
 ## Set Up
+
+The following steps are taken when setting up a new machine.
 
 ### Generate SSH Key
 
