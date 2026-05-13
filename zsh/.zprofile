@@ -1,7 +1,3 @@
-#print .zprofile
-#print $PATH
-#print ....
-
 if command -v /opt/homebrew/bin/brew >/dev/null ; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
@@ -15,18 +11,18 @@ _dot_join() {
   echo "$*"
 }
 
-
 _dot_path_helper() {
 	local spath=()
 	local file
 	local line
 
-	for file in $HOME/.paths.d/*(.); do
+	for file in $HOME/.paths.d/*(.N); do
 		while IFS= read -r line; do
 			spath+=$line
 		done < $file
-		export PATH="$(_dot_join : "${spath[@]}"):$PATH"
 	done
+
+	export PATH="$(_dot_join : "${spath[@]}"):$PATH"
 }
 
 _dot_path_helper
