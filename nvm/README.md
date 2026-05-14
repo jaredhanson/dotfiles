@@ -62,6 +62,21 @@ To confirm the version of Node.js in use, execute:
 node -v
 ```
 
+### With direnv
+
+In order to keep spawning a new shell [fast](https://registerspill.thorstenball.com/p/how-fast-is-your-shell),
+`nvm` is not loaded by default.  Projects that use `nvm` can load it by adding
+the following to `.envrc`:
+
+```sh
+use nvm
+```
+
+> [!NOTE]
+> `direnv` loades `.envrc` into a sub-shell and only makes exported environment
+> variables available to the current shell.  As such, `nvm` is not available as
+> a command when using `direnv`.
+
 ## See Also
 
 - [`bun`](../bun/) - A JavaScript runtime written in [Zig](https://ziglang.org/)
