@@ -77,7 +77,7 @@ export NVM_DIR="$HOME/.nvm"
 ```
 
 This file will be loaded by [`autoenv`](https://github.com/zpm-zsh/autoenv) when
-changing into the project directory.
+changing into the working directory.
 
 ### With direnv
 
@@ -88,7 +88,7 @@ use nvm
 ```
 
 This file will be loaded by [`direnv`](https://direnv.net/) when changing into
-the project directory.
+the working directory.
 
 > [!NOTE]
 > `direnv` loades `.envrc` into a sub-shell and only makes exported environment
