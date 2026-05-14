@@ -35,7 +35,7 @@ This command will update the configuration file at `$HOME/.nvm/alias/default`.
 ## Configure
 
 ```sh
-stow node
+stow nvm
 ```
 
 ## Usage
