@@ -62,15 +62,33 @@ To confirm the version of Node.js in use, execute:
 node -v
 ```
 
+In order to keep spawning a new shell [fast](https://registerspill.thorstenball.com/p/how-fast-is-your-shell),
+`nvm` is not loaded by default.  Projects that use `nvm` can load it via their
+preferred mechanism.
+
+### With autoenv
+
+Add the following to `.in`:
+
+```sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+```
+
+This file will be loaded by [`autoenv`](https://github.com/zpm-zsh/autoenv) when
+changing into the project directory.
+
 ### With direnv
 
-In order to keep spawning a new shell [fast](https://registerspill.thorstenball.com/p/how-fast-is-your-shell),
-`nvm` is not loaded by default.  Projects that use `nvm` can load it by adding
-the following to `.envrc`:
+Add the following to `.envrc`:
 
 ```sh
 use nvm
 ```
+
+This file will be loaded by [`direnv`](https://direnv.net/) when changing into
+the project directory.
 
 > [!NOTE]
 > `direnv` loades `.envrc` into a sub-shell and only makes exported environment
