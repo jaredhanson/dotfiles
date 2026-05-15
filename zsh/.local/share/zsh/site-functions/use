@@ -1,0 +1,4 @@
+local cmd=$1
+echo "Using $cmd..."
+shift
+"use_$cmd" "$@"
