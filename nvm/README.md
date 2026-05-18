@@ -6,8 +6,6 @@ runtime for servers, web applications, command line tools and scripts.
 
 ## Install
 
-### nvm
-
 Install `nvm`.
 
 ```sh
