@@ -34,14 +34,6 @@ pyenv global 3.11.4
 
 This command will update the configuration file at `$HOME/.pyenv/version`.
 
-To print the version number, execute:
-
-```sh
-python --version
-```
-
-### pyenv
-
 To display the currently active version of Python, execute:
 
 ```sh
@@ -67,3 +59,9 @@ pyenv local 3.10.12
 ```
 
 This command will update the configuration file at `$PWD/.python-version`.
+
+To confirm the version of Python in use, execute:
+
+```sh
+python --version
+```
