@@ -1,20 +1,22 @@
-# ~ / .dotfiles / python
-
-[Python](https://www.python.org/) is a high-level programming language ideal for
-scripting and rapid application development.
-
-## Install
+# ~ / .dotfiles / pyenv
 
 I use [`pyenv`](https://github.com/pyenv/pyenv) to install and switch between
-multiple versions of Python.
+multiple versions of [Python](https://www.python.org/), a high-level programming
+language ideal for scripting and rapid application development.
 
-### pyenv
-
-Install `pyenv`.
+## Install
 
 ```sh
 brew install pyenv
 ```
+
+## Configure
+
+```sh
+stow python
+```
+
+## Usage
 
 To install a version of Python, execute:
 
@@ -31,14 +33,6 @@ pyenv global 3.11.4
 ```
 
 This command will update the configuration file at `$HOME/.pyenv/version`.
-
-## Configure
-
-```sh
-stow python
-```
-
-## Usage
 
 To print the version number, execute:
 
