@@ -1,15 +1,18 @@
 # Per-terminal shell history for Rex.
 #
 # Rex restores every session, window, and block after its server restarts,
-# starting a fresh shell in each block with the same REX_SESSION and REX_BLOCK
-# it had before.  A fresh shell has no memory of its own, so this fragment
-# gives each block its own history file, named by those IDs, and writes every
-# command to it immediately.  A restored block then picks up exactly where its
-# predecessor left off, and a killed shell loses nothing.
+# starting a fresh shell in each block with the same REX_BLOCK it had before.
+# A fresh shell has no memory of its own, so this fragment gives each block
+# its own history file, named by that ID, and writes every command to it
+# immediately.  A restored block then picks up exactly where its predecessor
+# left off, and a killed shell loses nothing.
+#
+# Files are keyed by block alone.  A window can move to another session, so a
+# block's session isn't stable, and Rex no longer sets REX_SESSION.
 #
 # Outside Rex, where REX_BLOCK is unset, nothing here takes effect.
 
-if [[ -n $REX_SESSION && -n $REX_BLOCK ]]; then
+if [[ -n $REX_BLOCK ]]; then
   # The history file the shell would otherwise use, as set by /etc/zshrc or
   # earlier configuration, kept before HISTFILE is pointed at the block's own
   # file.  It remains the cross-session index: new blocks seed from it and,
@@ -24,21 +27,31 @@ if [[ -n $REX_SESSION && -n $REX_BLOCK ]]; then
   # Set up in an anonymous function so the path pieces stay local; only
   # HISTFILE and the options need to outlive it.
   () {
-    # One directory per session, one file per block.
-    local dir=${XDG_STATE_HOME:-$HOME/.local/state}/rex/history/${REX_SESSION#session:}
+    # One file per block.
+    local dir=${XDG_STATE_HOME:-$HOME/.local/state}/rex/history
     local file=$dir/${REX_BLOCK#block:}
 
     mkdir -p -m 700 "$dir"
 
     # A new block starts with the history of its neighbors, so that a fresh
-    # split isn't empty.  Siblings in the same session come first, oldest
-    # first, so the most recent sibling's commands are nearest in the history.
-    # A session with no siblings seeds from the original file.  The seed is
-    # read into memory only; the block's own file holds just what is typed
-    # here.
+    # split isn't empty.  Rex is asked once which blocks share the session,
+    # and their files are read oldest first, so the most recent sibling's
+    # commands are nearest in the history.  If Rex can't answer, or no
+    # sibling has history yet, the original file is read instead.  The seed
+    # is read into memory only; the block's own file holds just what is
+    # typed here.
     if [[ ! -e $file ]]; then
-      local -a seeds
-      seeds=("$dir"/*(.NOm))
+      local -a siblings seeds
+      local line
+      for line in ${(f)"$(rex --timeout 2s block ls -s "$REX_BLOCK" --json 2>/dev/null)"}; do
+        [[ $line == *'"block_id":'*'"block:'* ]] || continue
+        line=${line##*\"block:}
+        siblings+=(${line%%\"*})
+      done
+      local candidate
+      for candidate in "$dir"/*(.NOm); do
+        (( ${siblings[(Ie)${candidate:t}]} )) && seeds+=("$candidate")
+      done
       (( $#seeds )) || seeds=("$ORIG_HISTFILE"(.N))
       local seed
       for seed in $seeds; do
