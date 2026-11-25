@@ -19,7 +19,7 @@ if [[ -n $REX_SESSION && -n $REX_BLOCK ]]; then
 
   # Whether to copy each command to ORIG_HISTFILE as well.  Set it to 0
   # before this fragment loads to keep history strictly per block.
-  : ${REX_HISTORY_MIRROR:=1}
+  : ${REX_MIRROR_HISTORY:=1}
 
   # Set up in an anonymous function so the path pieces stay local; only
   # HISTFILE and the options need to outlive it.
@@ -63,7 +63,7 @@ if [[ -n $REX_SESSION && -n $REX_BLOCK ]]; then
   # Copy each command to the original file in the same format zsh writes, so
   # it stays a complete, searchable record across sessions and non-Rex
   # shells.
-  if (( REX_HISTORY_MIRROR )); then
+  if (( REX_MIRROR_HISTORY )); then
     rex_history_mirror() {
       local nl=$'\n' line=${1%$'\n'}
       [[ -n $line ]] || return 0

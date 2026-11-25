@@ -42,7 +42,7 @@ in it.
 Each command is also copied to the history file the shell would otherwise
 have used (`~/.zsh_history` by default), so it remains a complete, searchable
 record across sessions and non-Rex shells.  To keep history strictly per
-block, set `REX_HISTORY_MIRROR=0` in a file that loads before `.zshrc.d`, such
+block, set `REX_MIRROR_HISTORY=0` in a file that loads before `.zshrc.d`, such
 as `~/.zprofile.local`.
 
 History files for closed blocks are not removed.  Cleaning them up is left to
