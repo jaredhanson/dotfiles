@@ -9,7 +9,7 @@
 #
 # Outside Rex, where REX_BLOCK is unset, nothing here takes effect.
 
-if [[ -n $REX_BLOCK && -n $REX_SESSION ]]; then
+if [[ -n $REX_SESSION && -n $REX_BLOCK ]]; then
   # The history file this shell would have used without Rex, as set by
   # /etc/zshrc or earlier configuration.  It remains the cross-session index:
   # new blocks seed from it and, with mirroring on, every command is copied
