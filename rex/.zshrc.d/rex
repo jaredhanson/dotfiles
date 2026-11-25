@@ -10,13 +10,14 @@
 # Outside Rex, where REX_BLOCK is unset, nothing here takes effect.
 
 if [[ -n $REX_SESSION && -n $REX_BLOCK ]]; then
-  # The history file this shell would have used without Rex, as set by
-  # /etc/zshrc or earlier configuration.  It remains the cross-session index:
-  # new blocks seed from it and, with mirroring on, every command is copied
-  # to it.  The mirror hook reads it on every command, so it stays global.
-  typeset -g REX_HISTORY_GLOBAL=${HISTFILE:-$HOME/.zsh_history}
+  # The history file the shell would otherwise use, as set by /etc/zshrc or
+  # earlier configuration, kept before HISTFILE is pointed at the block's own
+  # file.  It remains the cross-session index: new blocks seed from it and,
+  # with mirroring on, every command is copied to it.  The mirror hook reads
+  # it on every command, so it stays global.
+  typeset -g ORIG_HISTFILE=${HISTFILE:-$HOME/.zsh_history}
 
-  # Whether to copy each command to REX_HISTORY_GLOBAL as well.  Set it to 0
+  # Whether to copy each command to ORIG_HISTFILE as well.  Set it to 0
   # before this fragment loads to keep history strictly per block.
   : ${REX_HISTORY_MIRROR:=1}
 
@@ -32,12 +33,13 @@ if [[ -n $REX_SESSION && -n $REX_BLOCK ]]; then
     # A new block starts with the history of its neighbors, so that a fresh
     # split isn't empty.  Siblings in the same session come first, oldest
     # first, so the most recent sibling's commands are nearest in the history.
-    # A session with no siblings seeds from the global file.  The seed is read
-    # into memory only; the block's own file holds just what is typed here.
+    # A session with no siblings seeds from the original file.  The seed is
+    # read into memory only; the block's own file holds just what is typed
+    # here.
     if [[ ! -e $file ]]; then
       local -a seeds
       seeds=("$dir"/*(.NOm))
-      (( $#seeds )) || seeds=("$REX_HISTORY_GLOBAL"(.N))
+      (( $#seeds )) || seeds=("$ORIG_HISTFILE"(.N))
       local seed
       for seed in $seeds; do
         fc -R "$seed"
@@ -58,15 +60,15 @@ if [[ -n $REX_SESSION && -n $REX_BLOCK ]]; then
   setopt HIST_FCNTL_LOCK
   unsetopt SHARE_HISTORY
 
-  # Copy each command to the global file in the same format zsh writes, so
-  # the global file stays a complete, searchable record across sessions and
-  # non-Rex shells.
+  # Copy each command to the original file in the same format zsh writes, so
+  # it stays a complete, searchable record across sessions and non-Rex
+  # shells.
   if (( REX_HISTORY_MIRROR )); then
     rex_history_mirror() {
       local nl=$'\n' line=${1%$'\n'}
       [[ -n $line ]] || return 0
       # zsh continues a multi-line entry by ending each line with a backslash.
-      print -r -- ": ${EPOCHSECONDS:-$(date +%s)}:0;${line//$nl/\\$nl}" >> "$REX_HISTORY_GLOBAL"
+      print -r -- ": ${EPOCHSECONDS:-$(date +%s)}:0;${line//$nl/\\$nl}" >> "$ORIG_HISTFILE"
       return 0
     }
     zmodload -F zsh/datetime p:EPOCHSECONDS 2>/dev/null

@@ -35,15 +35,15 @@ Every command is written as soon as it finishes, so a shell that Rex ends
 without warning loses nothing.
 
 A new block starts with the history of the other blocks in its session, most
-recent nearest, or with the global history when the session has none.  That
+recent nearest, or with the original history when the session has none.  That
 seed is read into memory only.  The block's own file holds just what was typed
 in it.
 
-Each command is also copied to the global history file (`~/.zsh_history` by
-default), so it remains a complete, searchable record across sessions and
-non-Rex shells.  To keep history strictly per block, set
-`REX_HISTORY_MIRROR=0` in a file that loads before `.zshrc.d`, such as
-`~/.zprofile.local`.
+Each command is also copied to the history file the shell would otherwise
+have used (`~/.zsh_history` by default), so it remains a complete, searchable
+record across sessions and non-Rex shells.  To keep history strictly per
+block, set `REX_HISTORY_MIRROR=0` in a file that loads before `.zshrc.d`, such
+as `~/.zprofile.local`.
 
 History files for closed blocks are not removed.  Cleaning them up is left to
 Rex-side tooling.
