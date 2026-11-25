@@ -31,12 +31,13 @@ initialize the environment.
 - `/etc/zlogin` (if the shell is a login shell)
 - `$HOME/.zlogin` (if the shell is a login shell)
 
-`.zshev` should contain commands to set the search path and other important
-environment variables.
+`.zshenv` should contain commands to set the search path and other important
+environment variables.  It should not contain commands that produce output or
+assume the shell is attached to a terminal.
 
 `.zshrc` is sourced in interactive shells.  It should contain commands to set
 aliases, functions, options, key bindings, etc.
 
+## Development
 
-
-
+When debugging shell scripts,
