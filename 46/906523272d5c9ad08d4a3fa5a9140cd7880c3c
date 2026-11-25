@@ -1,0 +1,19 @@
+zsh/.zprofile
+  s_050dfb70f18b64::t_7a5963f4d4ba9a 1-2,30-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "46906523272d5c9ad08d4a3fa5a9140cd7880c3c",
+  "prompts": {},
+  "sessions": {
+    "s_050dfb70f18b64": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "645ddec7-30f9-449b-b144-8c5e4ccb5d77",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Jared Hanson <jaredhanson@gmail.com>"
+    }
+  }
+}
