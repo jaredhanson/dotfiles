@@ -1,3 +1,6 @@
 [user]
 	name = Jared Hanson
 	email = jaredhanson@gmail.com
+
+[include]
+	path = ~/.gitconfig.local
