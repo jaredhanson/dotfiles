@@ -64,7 +64,7 @@ if [[ -n $REX_SESSION && -n $REX_BLOCK ]]; then
   # it stays a complete, searchable record across sessions and non-Rex
   # shells.
   if (( REX_MIRROR_HISTORY )); then
-    rex_history_mirror() {
+    rex_mirror_history() {
       local nl=$'\n' line=${1%$'\n'}
       [[ -n $line ]] || return 0
       # zsh continues a multi-line entry by ending each line with a backslash.
@@ -73,6 +73,6 @@ if [[ -n $REX_SESSION && -n $REX_BLOCK ]]; then
     }
     zmodload -F zsh/datetime p:EPOCHSECONDS 2>/dev/null
     autoload -Uz add-zsh-hook
-    add-zsh-hook zshaddhistory rex_history_mirror
+    add-zsh-hook zshaddhistory rex_mirror_history
   fi
 fi
