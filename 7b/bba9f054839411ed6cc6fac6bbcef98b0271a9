@@ -1,0 +1,14 @@
+zsh/README.md
+  h_e96400b5b9f79e 34-36,41,43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7bbba9f054839411ed6cc6fac6bbcef98b0271a9",
+  "prompts": {},
+  "humans": {
+    "h_e96400b5b9f79e": {
+      "author": "Jared Hanson <jaredhanson@gmail.com>"
+    }
+  }
+}
