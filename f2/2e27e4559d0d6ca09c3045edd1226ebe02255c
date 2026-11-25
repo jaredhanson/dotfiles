@@ -1,0 +1,21 @@
+rex/README.md
+  s_d3b5c00dcb298c::t_9898d3cd9d448d 5-6,9,31,38-41
+rex/.zshrc.d/rex
+  s_d3b5c00dcb298c::t_9898d3cd9d448d 4-11,15,30-31,37-42,44-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f22e27e4559d0d6ca09c3045edd1226ebe02255c",
+  "prompts": {},
+  "sessions": {
+    "s_d3b5c00dcb298c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2b248739-cade-4a57-8d0f-4d33e17a1255",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Jared Hanson <jaredhanson@gmail.com>"
+    }
+  }
+}
