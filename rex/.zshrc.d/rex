@@ -13,40 +13,41 @@ if [[ -n $REX_BLOCK && -n $REX_SESSION ]]; then
   # The history file this shell would have used without Rex, as set by
   # /etc/zshrc or earlier configuration.  It remains the cross-session index:
   # new blocks seed from it and, with mirroring on, every command is copied
-  # to it.
+  # to it.  The mirror hook reads it on every command, so it stays global.
   typeset -g REX_HISTORY_GLOBAL=${HISTFILE:-$HOME/.zsh_history}
 
   # Whether to copy each command to REX_HISTORY_GLOBAL as well.  Set it to 0
   # before this fragment loads to keep history strictly per block.
   : ${REX_HISTORY_MIRROR:=1}
 
-  # One directory per session, one file per block.
-  typeset -g REX_HISTORY_DIR=${XDG_STATE_HOME:-$HOME/.local/state}/rex/history
-  typeset -g REX_HISTORY_SESSION_DIR=$REX_HISTORY_DIR/${REX_SESSION#session:}
-  typeset -g REX_HISTORY_FILE=$REX_HISTORY_SESSION_DIR/${REX_BLOCK#block:}
+  # Set up in an anonymous function so the path pieces stay local; only
+  # HISTFILE and the options need to outlive it.
+  () {
+    # One directory per session, one file per block.
+    local dir=${XDG_STATE_HOME:-$HOME/.local/state}/rex/history/${REX_SESSION#session:}
+    local file=$dir/${REX_BLOCK#block:}
 
-  mkdir -p -m 700 "$REX_HISTORY_SESSION_DIR"
+    mkdir -p -m 700 "$dir"
 
-  # A new block starts with the history of its neighbors, so that a fresh
-  # split isn't empty.  Siblings in the same session come first, oldest
-  # first, so the most recent sibling's commands are nearest in the history.
-  # A session with no siblings seeds from the global file.  The seed is read
-  # into memory only; the block's own file holds just what is typed here.
-  if [[ ! -e $REX_HISTORY_FILE ]]; then
-    () {
+    # A new block starts with the history of its neighbors, so that a fresh
+    # split isn't empty.  Siblings in the same session come first, oldest
+    # first, so the most recent sibling's commands are nearest in the history.
+    # A session with no siblings seeds from the global file.  The seed is read
+    # into memory only; the block's own file holds just what is typed here.
+    if [[ ! -e $file ]]; then
       local -a seeds
-      seeds=("$REX_HISTORY_SESSION_DIR"/*(.NOm))
+      seeds=("$dir"/*(.NOm))
       (( $#seeds )) || seeds=("$REX_HISTORY_GLOBAL"(.N))
       local seed
       for seed in $seeds; do
         fc -R "$seed"
       done
-    }
-  fi
+    fi
 
-  HISTFILE=$REX_HISTORY_FILE
-  HISTSIZE=50000
-  SAVEHIST=50000
+    HISTFILE=$file
+    HISTSIZE=50000
+    SAVEHIST=50000
+  }
 
   # Write each command to the file as soon as it finishes, with its timestamp
   # and duration, rather than when the shell exits.  Rex ends shells without
