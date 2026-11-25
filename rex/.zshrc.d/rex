@@ -1,0 +1,75 @@
+# Per-terminal shell history for Rex.
+#
+# Rex restores every session, window, and block after its server restarts,
+# starting a fresh shell in each block with the same REX_SESSION and REX_BLOCK
+# it had before.  A fresh shell has no memory of its own, so this fragment
+# gives each block its own history file, named by those IDs, and writes every
+# command to it immediately.  A restored block then picks up exactly where its
+# predecessor left off, and a killed shell loses nothing.
+#
+# Outside Rex, where REX_BLOCK is unset, nothing here takes effect.
+
+if [[ -n $REX_BLOCK && -n $REX_SESSION ]]; then
+  # The history file this shell would have used without Rex, as set by
+  # /etc/zshrc or earlier configuration.  It remains the cross-session index:
+  # new blocks seed from it and, with mirroring on, every command is copied
+  # to it.
+  typeset -g REX_HISTORY_GLOBAL=${HISTFILE:-$HOME/.zsh_history}
+
+  # Whether to copy each command to REX_HISTORY_GLOBAL as well.  Set it to 0
+  # before this fragment loads to keep history strictly per block.
+  : ${REX_HISTORY_MIRROR:=1}
+
+  # One directory per session, one file per block.
+  typeset -g REX_HISTORY_DIR=${XDG_STATE_HOME:-$HOME/.local/state}/rex/history
+  typeset -g REX_HISTORY_SESSION_DIR=$REX_HISTORY_DIR/${REX_SESSION#session:}
+  typeset -g REX_HISTORY_FILE=$REX_HISTORY_SESSION_DIR/${REX_BLOCK#block:}
+
+  mkdir -p -m 700 "$REX_HISTORY_SESSION_DIR"
+
+  # A new block starts with the history of its neighbors, so that a fresh
+  # split isn't empty.  Siblings in the same session come first, oldest
+  # first, so the most recent sibling's commands are nearest in the history.
+  # A session with no siblings seeds from the global file.  The seed is read
+  # into memory only; the block's own file holds just what is typed here.
+  if [[ ! -e $REX_HISTORY_FILE ]]; then
+    () {
+      local -a seeds
+      seeds=("$REX_HISTORY_SESSION_DIR"/*(.NOm))
+      (( $#seeds )) || seeds=("$REX_HISTORY_GLOBAL"(.N))
+      local seed
+      for seed in $seeds; do
+        fc -R "$seed"
+      done
+    }
+  fi
+
+  HISTFILE=$REX_HISTORY_FILE
+  HISTSIZE=50000
+  SAVEHIST=50000
+
+  # Write each command to the file as soon as it finishes, with its timestamp
+  # and duration, rather than when the shell exits.  Rex ends shells without
+  # warning when its server stops, so writing at exit would lose the most
+  # recent commands.
+  setopt INC_APPEND_HISTORY_TIME
+  setopt EXTENDED_HISTORY
+  setopt HIST_FCNTL_LOCK
+  unsetopt SHARE_HISTORY
+
+  # Copy each command to the global file in the same format zsh writes, so
+  # the global file stays a complete, searchable record across sessions and
+  # non-Rex shells.
+  if (( REX_HISTORY_MIRROR )); then
+    rex_history_mirror() {
+      local nl=$'\n' line=${1%$'\n'}
+      [[ -n $line ]] || return 0
+      # zsh continues a multi-line entry by ending each line with a backslash.
+      print -r -- ": ${EPOCHSECONDS:-$(date +%s)}:0;${line//$nl/\\$nl}" >> "$REX_HISTORY_GLOBAL"
+      return 0
+    }
+    zmodload -F zsh/datetime b:strftime p:EPOCHSECONDS 2>/dev/null
+    autoload -Uz add-zsh-hook
+    add-zsh-hook zshaddhistory rex_history_mirror
+  fi
+fi
