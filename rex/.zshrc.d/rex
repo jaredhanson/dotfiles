@@ -68,7 +68,7 @@ if [[ -n $REX_BLOCK && -n $REX_SESSION ]]; then
       print -r -- ": ${EPOCHSECONDS:-$(date +%s)}:0;${line//$nl/\\$nl}" >> "$REX_HISTORY_GLOBAL"
       return 0
     }
-    zmodload -F zsh/datetime b:strftime p:EPOCHSECONDS 2>/dev/null
+    zmodload -F zsh/datetime p:EPOCHSECONDS 2>/dev/null
     autoload -Uz add-zsh-hook
     add-zsh-hook zshaddhistory rex_history_mirror
   fi
