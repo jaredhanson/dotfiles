@@ -1,9 +1,10 @@
+#print .zprofile
+
 if command -v /opt/homebrew/bin/brew >/dev/null ; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # TODO: Add pyenv to path, if needed
-export PYENV_ROOT="$HOME/.pyenv"
 
 _dot_join() {
   local IFS="$1"
@@ -26,3 +27,5 @@ _dot_path_helper() {
 }
 
 _dot_path_helper
+
+[ -f "$HOME/.zprofile.local" ] && . "$HOME/.zprofile.local"
