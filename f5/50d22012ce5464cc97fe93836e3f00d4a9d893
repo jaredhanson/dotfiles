@@ -1,0 +1,20 @@
+git/.gitconfig
+  s_78bb1d8855845b::t_10730fc90f566f 5-6
+  s_78bb1d8855845b::t_94cd4153aa5ac9 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f550d22012ce5464cc97fe93836e3f00d4a9d893",
+  "prompts": {},
+  "sessions": {
+    "s_78bb1d8855845b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a3081bf2-3306-4e6d-8dbd-4239c641039b",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Jared Hanson <jaredhanson@gmail.com>"
+    }
+  }
+}
