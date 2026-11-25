@@ -1,0 +1,21 @@
+rex/.zshrc.d/rex
+  s_d3b5c00dcb298c::t_5601abe9fc53cb 22,66
+rex/README.md
+  s_d3b5c00dcb298c::t_5601abe9fc53cb 45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "83c34a6978b244e5717393f774e2118163fb30c1",
+  "prompts": {},
+  "sessions": {
+    "s_d3b5c00dcb298c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2b248739-cade-4a57-8d0f-4d33e17a1255",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Jared Hanson <jaredhanson@gmail.com>"
+    }
+  }
+}
