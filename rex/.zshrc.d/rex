@@ -40,7 +40,10 @@ if [[ -n $REX_BLOCK ]]; then
     # sibling has history yet, the original file is read instead.  The seed
     # is read into memory only; the block's own file holds just what is
     # typed here.
-    if [[ ! -e $file ]]; then
+    #
+    # zsh creates the file as soon as it starts, so an empty file means no
+    # command was ever typed in this block, and it is seeded like a new one.
+    if [[ ! -s $file ]]; then
       local -a siblings seeds
       local line
       for line in ${(f)"$(rex --timeout 2s block ls -s "$REX_BLOCK" --json 2>/dev/null)"}; do

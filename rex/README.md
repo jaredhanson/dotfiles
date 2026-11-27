@@ -32,7 +32,8 @@ Inside Rex, each block writes its history to:
 ```
 
 Every command is written as soon as it finishes, so a shell that Rex ends
-without warning loses nothing.
+without warning loses nothing.  The file is created when the shell starts, so
+a block that has never run a command has an empty file.
 
 A new block starts with the history of the other blocks in its session, most
 recent nearest.  Rex is asked once, with `rex block ls`, which blocks those
